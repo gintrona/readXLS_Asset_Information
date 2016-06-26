@@ -10,7 +10,7 @@ def main(args):
 	if int(args[0])==0 or int(args[0])==1  :	
 		skipDateControl = True if int(args[0])==1 else False  
 	else: 
-		raise ValueError("Argument skipDateControl is not 1 (True) or 0 (False)")
+		raise ValueError("Argument skipDateControl is neither 1 (skip) nor 0 (False)")
 
 	## Date: DD/MM/YYYY
 	now = datetime.datetime.now()
@@ -40,7 +40,7 @@ def main(args):
 	## get Dollar Exhange Rate
 	dollarExchangeRate =auxiliary.getDollarExchangeRate()
 
-	# dispatch in files
+	# dispatch data to files
 	for elem in dictDenomIsKey.keys():
 		auxiliary.writeToFile(currentDate, dollarExchangeRate ,elem, dictDenomIsKey[elem], skipDateControl)
 

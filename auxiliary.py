@@ -17,7 +17,6 @@ def writeToFile(date, DollarExchangeRate,fileName, dictElems, skipDateControl):
 		if os.path.isfile(fullFileName):
 			f = open(fullFileName, 'r')
 			lines = f.readlines()
-			##use strip in case month or month are one value
 			lastDate = lines[len(lines)-1][0:10].strip()  
 			if lastDate == date and not skipDateControl:
 				print 'File ', fullFileName,'is up to date; nothing has been done'
