@@ -1,0 +1,6 @@
+vault/
+vault2/
+XLSFiles/
+*.xlsx
+*~
+*.pyc
